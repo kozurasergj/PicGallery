@@ -1,4 +1,6 @@
 export const modals = () => {
+  let btnPresed = false;
+
   const bindModal = ({ triggersSelector, modalSelector, closeSelector, closeClickOverlayModal, destroyTrigger }) => {
     const triggers = document.querySelectorAll(triggersSelector);
     const modal = document.querySelector(modalSelector);
@@ -11,6 +13,7 @@ export const modals = () => {
         if (event.target) {
           event.preventDefault();
         }
+        btnPresed = true;
         if (destroyTrigger) {
           trigger.remove();
         }
@@ -82,6 +85,15 @@ export const modals = () => {
     return scrollWidth;
   };
 
+  const openByScroll = (selector) => {
+    window.addEventListener('scroll', () => {
+      const windowFinishScroll = (window.pageYOffset + document.documentElement.clientHeight) >= document.documentElement.scrollHeight;
+      if (!btnPresed && windowFinishScroll) {
+        document.querySelector(selector).click();
+      }
+    });
+  };
+
   bindModal({
     triggersSelector: '.button-design',
     modalSelector: '.popup-design',
@@ -103,6 +115,6 @@ export const modals = () => {
     closeClickOverlayModal: true,
     destroyTrigger: true
   });
-
-  showModalByTime('.popup-consultation', 3000);
+  openByScroll('.fixed-gift');
+  showModalByTime('.popup-consultation', 60000);
 }
