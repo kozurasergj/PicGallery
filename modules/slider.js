@@ -33,10 +33,8 @@ export const sliders = ({ slide, direction, preview, next }) => {
 
     prevBtn.addEventListener('click', () => {
       plusSlides(-1);
-      slides[slideIndex - 1].classList.remove('slideInLeft');
-      slides[slideIndex - 1].classList.add('slideInRight');
+      slides[slideIndex - 1].classList.add('slideInDown');
     });
-
     nextBtn.addEventListener('click', () => {
       plusSlides(1);
       slides[slideIndex - 1].classList.remove('slideInRight');
