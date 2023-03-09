@@ -1,5 +1,5 @@
 export const modals = () => {
-  const bindModal = ({ triggersSelector, modalSelector, closeSelector, closeClickOverlayModal }) => {
+  const bindModal = ({ triggersSelector, modalSelector, closeSelector, closeClickOverlayModal, destroyTrigger }) => {
     const triggers = document.querySelectorAll(triggersSelector);
     const modal = document.querySelector(modalSelector);
     const close = document.querySelector(closeSelector);
@@ -10,6 +10,9 @@ export const modals = () => {
       trigger.addEventListener('click', event => {
         if (event.target) {
           event.preventDefault();
+        }
+        if (destroyTrigger) {
+          trigger.remove();
         }
         closeAllModals();
         modal.style.display = 'block';
@@ -61,6 +64,8 @@ export const modals = () => {
       if (!isDispay) {
         document.querySelector(selector).style.display = 'block';
         document.body.classList.add('modal-open');
+        const scrollWidth = calcScrol();
+        document.body.style.marginRight = `${scrollWidth}px`;
       }
     }, time);
   }
@@ -82,14 +87,22 @@ export const modals = () => {
     modalSelector: '.popup-design',
     closeSelector: '.popup-design .popup-close',
     closeClickOverlayModal: true,
+    destroyTrigger: false
   });
   bindModal({
     triggersSelector: '.button-consultation',
     modalSelector: '.popup-consultation',
     closeSelector: '.popup-consultation .popup-close',
     closeClickOverlayModal: true,
+    destroyTrigger: false
+  });
+  bindModal({
+    triggersSelector: '.fixed-gift',
+    modalSelector: '.popup-gift',
+    closeSelector: '.popup-gift .popup-close',
+    closeClickOverlayModal: true,
+    destroyTrigger: true
   });
 
-
-  showModalByTime('.popup-consultation', 60000);
+  showModalByTime('.popup-consultation', 3000);
 }
