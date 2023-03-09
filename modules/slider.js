@@ -1,4 +1,6 @@
 export const sliders = ({ slide, direction, preview, next }) => {
+  const prevBtn = document.querySelector(preview);
+  const nextBtn = document.querySelector(next);
   let slideIndex = 1;
   let paused = false;
 
@@ -22,24 +24,15 @@ export const sliders = ({ slide, direction, preview, next }) => {
     showSlides(slideIndex += numSlide);
   }
 
-  const prevBtn = document.querySelector(preview);
-  const nextBtn = document.querySelector(next);
-
-  if (prevBtn && nextBtn) {
-    prevBtn.addEventListener('click', () => {
-      plusSlides(-1);
-      slides[slideIndex - 1].classList.add('slideInDown');
-    });
-
-    nextBtn.addEventListener('click', () => {
-      plusSlides(1);
-      slides[slideIndex - 1].classList.remove('slideInRight');
-      slides[slideIndex - 1].classList.add('slideInLeft');
-    });
-  } else {
-    console.log(new Error('error'));
-  }
-
+  prevBtn.addEventListener('click', () => {
+    plusSlides(-1);
+    slides[slideIndex - 1].classList.add('slideInDown');
+  });
+  nextBtn.addEventListener('click', () => {
+    plusSlides(1);
+    slides[slideIndex - 1].classList.remove('slideInRight');
+    slides[slideIndex - 1].classList.add('slideInLeft');
+  });
 
   const activateAnimation = () => {
     if (direction === 'vertical') {
@@ -56,12 +49,10 @@ export const sliders = ({ slide, direction, preview, next }) => {
     }
   }
   activateAnimation();
-
   slides[0].parentNode.addEventListener('mouseenter', () => {
     clearInterval(paused);
   });
   slides[0].parentNode.addEventListener('mouseleave', () => {
     activateAnimation();
   });
-
 };
