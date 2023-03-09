@@ -28,6 +28,7 @@ export const modals = () => {
     const closeAllModals = () => {
       windows.forEach((window) => {
         window.style.display = 'none';
+        window.classList.add('animated', 'fadeIn');
       });
     };
 
