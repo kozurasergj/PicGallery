@@ -3,46 +3,43 @@ export const sliders = ({ slide, direction, preview, next }) => {
   let paused = false;
 
   const slides = document.querySelectorAll(slide);
-
   const showSlides = (numSlide) => {
     if (numSlide > slides.length) {
       slideIndex = 1;
     }
-
     if (numSlide < 1) {
       slideIndex = slides.length;
     }
-
     slides.forEach(slide => {
       slide.classList.add("animated");
       slide.style.display = "none";
     });
-
     slides[slideIndex - 1].style.display = 'block';
   }
-
   showSlides(slideIndex);
 
   const plusSlides = (numSlide) => {
     showSlides(slideIndex += numSlide);
   }
 
-  try {
-    const prevBtn = document.querySelector(preview);
-    const nextBtn = document.querySelector(next);
+  const prevBtn = document.querySelector(preview);
+  const nextBtn = document.querySelector(next);
 
+  if (prevBtn && nextBtn) {
     prevBtn.addEventListener('click', () => {
       plusSlides(-1);
       slides[slideIndex - 1].classList.add('slideInDown');
     });
+
     nextBtn.addEventListener('click', () => {
       plusSlides(1);
       slides[slideIndex - 1].classList.remove('slideInRight');
       slides[slideIndex - 1].classList.add('slideInLeft');
     });
-  } catch (error) {
-    console.log(error);
+  } else {
+    console.log(new Error('error'));
   }
+
 
   const activateAnimation = () => {
     if (direction === 'vertical') {
