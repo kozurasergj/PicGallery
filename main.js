@@ -11,7 +11,5 @@ window.addEventListener('DOMContentLoaded', () => {
   sliders({
     slide: '.main-slider-item',
     direction: 'vertical',
-    preview: '',
-    next: ''
   });
 });
