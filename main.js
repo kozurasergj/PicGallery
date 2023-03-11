@@ -1,4 +1,4 @@
-import { modals, sliders } from "./modules";
+import { modals, sliders, form } from "./modules";
 
 window.addEventListener('DOMContentLoaded', () => {
   modals();
@@ -6,10 +6,11 @@ window.addEventListener('DOMContentLoaded', () => {
     slide: '.feedback-slider-item',
     direction: '',
     preview: '.main-prev-btn',
-    next: '.main-next-btn'
+    next: '.main-next-btn',
   });
   sliders({
     slide: '.main-slider-item',
     direction: 'vertical',
   });
+  form();
 });

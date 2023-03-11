@@ -24,15 +24,17 @@ export const sliders = ({ slide, direction, preview, next }) => {
     showSlides(slideIndex += numSlide);
   }
 
-  prevBtn.addEventListener('click', () => {
-    plusSlides(-1);
-    slides[slideIndex - 1].classList.add('slideInDown');
-  });
-  nextBtn.addEventListener('click', () => {
-    plusSlides(1);
-    slides[slideIndex - 1].classList.remove('slideInRight');
-    slides[slideIndex - 1].classList.add('slideInLeft');
-  });
+  if (prevBtn && nextBtn) {
+    document.querySelector(preview).addEventListener('click', () => {
+      plusSlides(-1);
+      slides[slideIndex - 1].classList.add('slideInDown');
+    });
+    document.querySelector(next).addEventListener('click', () => {
+      plusSlides(1);
+      slides[slideIndex - 1].classList.remove('slideInRight');
+      slides[slideIndex - 1].classList.add('slideInLeft');
+    });
+  }
 
   const activateAnimation = () => {
     if (direction === 'vertical') {
