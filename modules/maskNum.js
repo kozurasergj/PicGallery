@@ -5,12 +5,10 @@ export const mask = (selector) => {
       element.setSelectionRange(position, position);
     } else if (element.createTextRange) {
       let range = element.createTextRange();
-      console.log(range);
       range.collapse(true);
       range.moveEnd('character', position);
       range.moveStart('character', position);
       range.select();
-
     }
   }
 
