@@ -1,3 +1,4 @@
+import { postData } from "./requests";
 export const form = () => {
   const forms = document.querySelectorAll('form');
   const inputs = document.querySelectorAll('input');
@@ -15,13 +16,7 @@ export const form = () => {
     designer: 'https://dummyjson.com/users/1',
     data: 'https://dummyjson.com/users/2',
   }
-  const postData = async (url, data) => {
-    const response = await fetch(url, {
-      method: 'GET',
-      // body: data,
-    });
-    return await response.text();
-  };
+
   const clearInputs = () => {
     inputs.forEach((input) => {
       input.value = '';

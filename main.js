@@ -1,5 +1,4 @@
-import { modals, sliders, form, mask, checkInputs } from "./modules";
-
+import { modals, sliders, form, mask, checkInputs, showMoreServer } from "./modules";
 window.addEventListener('DOMContentLoaded', () => {
   modals();
   sliders({
@@ -16,4 +15,5 @@ window.addEventListener('DOMContentLoaded', () => {
   mask('[name="phone"]');
   checkInputs('[name="name"]');
   checkInputs('[name="message"]');
+  showMoreServer('.button-styles', '#styles .row');
 });
