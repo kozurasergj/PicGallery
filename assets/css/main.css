@@ -1166,7 +1166,7 @@ h4 {
   position: absolute;
   left: 0;
   top: 0;
-  width: 100%;
+  /* width: 100%; */
   height: 100%;
   transform: scale(20);
   letter-spacing: 10em;
@@ -1259,22 +1259,22 @@ h4 {
     display: none;
   }
   .calc .file_upload > div {
-    display: none;
+    /* display: none; */
   }
   .calc .file_upload > button {
-    width: 100%;
+    /* width: 100%; */
   }
   .popup-design .file_upload > div {
-    display: none;
+    /* display: none; */
   }
   .popup-design .file_upload > button {
-    width: 100%;
+    /* width: 100%; */
   }
   .main .file_upload > div {
-    display: none;
+    /* display: none; */
   }
   .main .file_upload > button {
-    width: 100%;
+    /* width: 100%; */
   }
 }
 @media (max-width: 1199px) {
