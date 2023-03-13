@@ -17,4 +17,7 @@ window.addEventListener('DOMContentLoaded', () => {
   checkInputs('[name="message"]');
   showMoreServer('.button-styles', '#styles .row');
   calc('#size', '#material', '#options', '.promocode', '.calc-price');
+
+
+  
 });

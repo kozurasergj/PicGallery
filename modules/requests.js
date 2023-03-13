@@ -1,6 +1,7 @@
 export const postData = async (url, data) => {
   const response = await fetch(url, {
-    method: 'GET',
+    method: 'POST',
+    body: data
   });
   return response.text();
 }

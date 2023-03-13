@@ -13,8 +13,8 @@ export const form = () => {
     fail: 'assets/img/fail.png'
   }
   const path = {
-    designer: 'https://dummyjson.com/users/1',
-    data: 'https://dummyjson.com/users/2',
+    designer: 'https://dummyjson.com/users/add',
+    data: 'https://dummyjson.com/users/add',
   }
 
   const clearInputs = () => {
