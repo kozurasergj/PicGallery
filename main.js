@@ -1,4 +1,4 @@
-import { modals, sliders, form, mask, checkInputs, showMoreServer } from "./modules";
+import { modals, sliders, form, mask, checkInputs, showMoreServer, calc } from "./modules";
 window.addEventListener('DOMContentLoaded', () => {
   modals();
   sliders({
@@ -16,4 +16,5 @@ window.addEventListener('DOMContentLoaded', () => {
   checkInputs('[name="name"]');
   checkInputs('[name="message"]');
   showMoreServer('.button-styles', '#styles .row');
+  calc('#size', '#material', '#options', '.promocode', '.calc-price');
 });
