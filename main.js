@@ -1,4 +1,4 @@
-import { modals, sliders, form, mask, checkInputs, showMoreServer, calc , filter,pictureSize} from "./modules";
+import { modals, sliders, form, mask, checkInputs, showMoreServer, calc , filter,pictureSize,accordion} from "./modules";
 window.addEventListener('DOMContentLoaded', () => {
   modals();
   sliders({
@@ -19,4 +19,5 @@ window.addEventListener('DOMContentLoaded', () => {
   calc('#size', '#material', '#options', '.promocode', '.calc-price');
   filter();
   pictureSize('.sizes-block');
+  accordion('.accordion-heading','.accordion-block');
 });
