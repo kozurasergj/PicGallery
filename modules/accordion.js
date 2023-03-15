@@ -1,11 +1,9 @@
 export const accordion = (triggersSelector, itemsSelector) => {
   const btns = document.querySelectorAll(triggersSelector);
   const blocks = document.querySelectorAll(itemsSelector);
-
   blocks.forEach((block) => {
-    block.classList.add('animated', 'fadeInDown');
+    block.classList.add('animated', 'fadeIn');
   });
-
   btns.forEach(btn => {
     btn.addEventListener('click', (event) => {
       const target = event.target.parentNode;
@@ -17,5 +15,4 @@ export const accordion = (triggersSelector, itemsSelector) => {
       }
     });
   });
-
 };
