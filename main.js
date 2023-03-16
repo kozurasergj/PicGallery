@@ -1,4 +1,4 @@
-import { modals, sliders, form, mask, checkInputs, showMoreServer, calc ,filter,pictureSize,accordion,burger,scrolling} from "./modules";
+import { modals, sliders, form, mask, checkInputs, showMoreServer, calc, filter, pictureSize, accordion, burger, scrolling, drop } from "./modules";
 window.addEventListener('DOMContentLoaded', () => {
   modals();
   sliders({
@@ -19,7 +19,8 @@ window.addEventListener('DOMContentLoaded', () => {
   calc('#size', '#material', '#options', '.promocode', '.calc-price');
   filter();
   pictureSize('.sizes-block');
-  accordion('.accordion-heading','.accordion-block');
-  burger('.burger-menu','.burger');
+  accordion('.accordion-heading', '.accordion-block');
+  burger('.burger-menu', '.burger');
   scrolling();
+  drop();
 });
